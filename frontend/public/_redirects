@@ -1,0 +1,11 @@
+# Netlify redirects file for Single Page Application (SPA)
+# This ensures all routes are handled by React Router
+
+# Redirect all requests to index.html for client-side routing
+/*    /index.html    200
+
+# API proxy (optional - if you want to proxy API calls through Netlify)
+# /api/*  https://your-backend-url.railway.app/api/:splat  200
+
+# 404 fallback
+/404  /index.html  404
