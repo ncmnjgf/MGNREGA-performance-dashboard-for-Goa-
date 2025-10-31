@@ -1,0 +1,26 @@
+# Root Nixpacks Configuration
+#
+# ⚠️ IMPORTANT: This is a monorepo with separate backend and frontend services
+#
+# You MUST deploy backend and frontend as SEPARATE services in Railway:
+#
+# 1. Backend Service:
+#    - Settings → Root Directory: /backend
+#    - Will use backend/nixpacks.toml automatically
+#
+# 2. Frontend Service:
+#    - Settings → Root Directory: /frontend
+#    - Will use frontend/nixpacks.toml automatically
+#
+# DO NOT deploy from the root directory!
+#
+# See RAILWAY_DEPLOYMENT.md for detailed instructions.
+
+[phases.setup]
+nixPkgs = ["nodejs-18_x"]
+
+[phases.install]
+cmds = ["echo 'Please set Root Directory to /backend or /frontend in Railway service settings'"]
+
+[start]
+cmd = "echo '⚠️ ERROR: You must deploy backend and frontend separately. Set Root Directory to /backend or /frontend in Railway Settings → Service Settings.' && exit 1"

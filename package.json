@@ -5,6 +5,7 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "start": "echo 'Please deploy backend and frontend separately. Set Root Directory to /backend or /frontend in Railway settings.'",
     "test": "node test-setup.js",
     "install:all": "cd backend && npm install && cd ../frontend && npm install",
     "dev:backend": "cd backend && npm run dev",
