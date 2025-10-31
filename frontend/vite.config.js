@@ -15,8 +15,8 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3000,
-    host: true,
+    port: process.env.PORT || 3000,
+    host: "0.0.0.0",
     open: false,
     cors: true,
     force: true,
@@ -26,11 +26,15 @@ export default defineConfig({
     },
     proxy: {
       "/api": {
-        target: "http://localhost:5000",
+        target: process.env.VITE_API_URL || "http://localhost:5000",
         changeOrigin: true,
         secure: false,
       },
     },
+  },
+  preview: {
+    port: process.env.PORT || 3000,
+    host: "0.0.0.0",
   },
   build: {
     outDir: "dist",
@@ -53,5 +57,6 @@ export default defineConfig({
   },
   define: {
     __APP_VERSION__: JSON.stringify(process.env.npm_package_version),
+    "process.env.VITE_API_URL": JSON.stringify(process.env.VITE_API_URL || ""),
   },
 });

@@ -1,3 +1,158 @@
+# MGNREGA Goa Dashboard
+
+A user-friendly dashboard for visualizing MGNREGA (Mahatma Gandhi National Rural Employment Guarantee Act) data for Goa state. Built with React, Node.js, and Express.
+
+## 🚀 Quick Start
+
+### Local Development
+
+**Prerequisites:**
+- Node.js 18+ 
+- MongoDB (optional - falls back to CSV data)
+- Git
+
+**Setup:**
+
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd goa
+
+# Install backend dependencies
+cd backend
+npm install
+
+# Install frontend dependencies
+cd ../frontend
+npm install
+```
+
+**Run the application:**
+
+```bash
+# Terminal 1 - Start Backend
+cd backend
+npm run dev
+
+# Terminal 2 - Start Frontend
+cd frontend
+npm run dev
+```
+
+Visit `http://localhost:3000` to view the dashboard.
+
+## 🌐 Railway Deployment
+
+Deploy this project to Railway in minutes! See [RAILWAY_DEPLOYMENT.md](./RAILWAY_DEPLOYMENT.md) for detailed instructions.
+
+### Quick Deploy Steps:
+
+1. **Push to GitHub:**
+   ```bash
+   git add .
+   git commit -m "Ready for deployment"
+   git push origin main
+   ```
+
+2. **Deploy on Railway:**
+   - Visit [railway.app](https://railway.app/)
+   - Create new project from GitHub repo
+   - Deploy backend (root: `/backend`)
+   - Deploy frontend (root: `/frontend`)
+
+3. **Set Environment Variables:**
+   
+   **Backend:**
+   ```
+   NODE_ENV=production
+   MONGODB_URI=<your-mongodb-uri>
+   CORS_ORIGIN=<frontend-url>
+   ```
+   
+   **Frontend:**
+   ```
+   NODE_ENV=production
+   VITE_API_URL=<backend-url>
+   ```
+
+### Windows Users:
+```bash
+railway-deploy.bat
+```
+
+### Linux/Mac Users:
+```bash
+bash railway-deploy.sh
+```
+
+## 📁 Project Structure
+
+```
+goa/
+├── backend/               # Express.js API server
+│   ├── src/
+│   │   ├── server.js     # Main server file
+│   │   ├── routes/       # API routes
+│   │   ├── controllers/  # Request handlers
+│   │   ├── models/       # Database models
+│   │   └── data/         # CSV data files
+│   ├── package.json
+│   └── railway.json      # Railway config
+│
+├── frontend/             # React + Vite application
+│   ├── src/
+│   │   ├── main.jsx      # Entry point
+│   │   ├── pages/        # Page components
+│   │   ├── components/   # Reusable components
+│   │   ├── utils/        # Utilities & API client
+│   │   └── styles/       # CSS files
+│   ├── package.json
+│   └── railway.json      # Railway config
+│
+├── RAILWAY_DEPLOYMENT.md # Detailed deployment guide
+├── railway-deploy.bat    # Windows deployment helper
+└── railway-deploy.sh     # Linux/Mac deployment helper
+```
+
+## 🎯 Features
+
+- **Real-time Data Visualization**: Interactive charts and metrics
+- **District Selection**: View data for North Goa or South Goa
+- **Auto-location Detection**: Automatically detect user's district
+- **Offline Support**: Works with cached data when offline
+- **Mobile Responsive**: Optimized for all device sizes
+- **Fallback Data**: CSV fallback when API is unavailable
+- **Accessibility**: WCAG 2.1 AA compliant
+
+## 🔧 Technology Stack
+
+**Frontend:**
+- React 18
+- Vite
+- Chart.js
+- Tailwind CSS
+- Axios
+
+**Backend:**
+- Node.js 18+
+- Express.js
+- MongoDB (optional)
+- CSV Parser
+
+## 📊 API Endpoints
+
+- `GET /health` - Health check
+- `GET /api` - All MGNREGA data
+- `GET /api/districts` - List of districts
+- `GET /api/data/:district` - District-specific data
+- `POST /api/cache/clear` - Clear cache
+
+## 🧪 Testing
+
+See the testing section below for comprehensive testing procedures.
+
+---
+
 # Step 10: Comprehensive Testing Guide
 ## MGNREGA Goa Dashboard - Complete Testing Suite
 
