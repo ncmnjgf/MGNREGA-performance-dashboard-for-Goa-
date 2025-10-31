@@ -21,6 +21,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "axios": "^1.12.2",
     "cors": "^2.8.5",
     "csv-parser": "^3.0.0",
     "dotenv": "^16.3.1",
@@ -31,7 +32,6 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "axios": "^1.12.2",
     "nodemon": "^3.0.1"
   },
   "engines": {
