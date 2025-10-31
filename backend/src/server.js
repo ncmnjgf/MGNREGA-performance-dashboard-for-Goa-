@@ -92,10 +92,7 @@ const connectDB = async () => {
       process.env.MONGODB_URI ||
       "mongodb://localhost:27017/mgnrega-goa-dashboard";
 
-    await mongoose.connect(mongoUri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(mongoUri);
 
     console.log("✅ MongoDB connected successfully");
   } catch (err) {

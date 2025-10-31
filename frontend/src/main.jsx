@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import AppNew from "./AppNew.jsx";
+import SimpleDashboard from "./pages/SimpleDashboard.jsx";
 import "./styles/globals.css";
 
 // Simple error boundary
@@ -84,7 +84,7 @@ const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <ErrorBoundary>
-      <AppNew />
+      <SimpleDashboard />
     </ErrorBoundary>
   </React.StrictMode>,
 );

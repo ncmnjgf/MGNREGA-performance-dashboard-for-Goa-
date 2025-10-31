@@ -145,6 +145,13 @@ module.exports = {
         128: "32rem",
       },
 
+      // Extended border widths for low-literacy design
+      borderWidth: {
+        '3': '3px',
+        '5': '5px',
+        '6': '6px',
+      },
+
       // Typography scale optimized for accessibility
       fontSize: {
         xs: ["0.75rem", { lineHeight: "1rem" }],
